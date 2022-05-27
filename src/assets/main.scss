@@ -1,0 +1,31 @@
+.section {
+    min-height: 75vh;
+    background-color: #0b1120;
+    color: white;
+}
+
+.my-color {
+    color: #ff5004 !important;
+}
+
+.my-btn {
+    color: #ff5004;
+    border: 1px solid #ff5004;
+}
+
+.my-btn:hover,
+.my-btn:active,
+.my-btn:focus {
+    color: #0b1120;
+    background: #ff5004;
+    border: 1px solid #ff5004;
+    box-shadow: none;
+ }
+
+ .text-bold {
+     font-weight: bold;
+ }
+
+ .secondary-color {
+    color: #ffcd9b
+ }

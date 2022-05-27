@@ -4,16 +4,18 @@ module.exports = {
     node: true,
   },
   extends: [
-    "plugin:vue/vue3-essential",
-    "eslint:recommended",
-    "@vue/typescript/recommended",
-    "plugin:prettier/recommended",
+    // Base ESLint recommended rules
+    'eslint:recommended',
+    'plugin:vue/vue3-essential',
+    '@vue/typescript/recommended',
+    'prettier',
   ],
   parserOptions: {
-    ecmaVersion: 2020,
+    ecmaVersion: 2021,
   },
   rules: {
-    "no-console": process.env.NODE_ENV === "production" ? "warn" : "off",
-    "no-debugger": process.env.NODE_ENV === "production" ? "warn" : "off",
+    'vue/multi-word-component-names': 0,
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
+    'no-debugger': process.env.NODE_ENV === 'production' ? 'warn' : 'off',
   },
 };

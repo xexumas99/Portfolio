@@ -1,27 +1,31 @@
-<template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-  <HelloWorld msg="Welcome to Your Vue.js + TypeScript App" />
-</template>
-
 <script lang="ts">
-import { defineComponent } from "vue";
-import HelloWorld from "./components/HelloWorld.vue";
+import { defineComponent } from 'vue';
+import About from './components/About.vue';
+import Bottombar from './components/Bottombar.vue';
+import Header from './components/Header.vue';
+import Navbar from './components/Navbar.vue';
+import Projects from './components/Projects.vue';
 
 export default defineComponent({
-  name: "App",
-  components: {
-    HelloWorld,
-  },
+   components: { Header, About, Projects, Navbar, Bottombar },
+   name: 'App',
+   setup() {
+      return {};
+   },
 });
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<template>
+   <Navbar />
+
+   <Header />
+
+   <About />
+
+   <Projects class="pb-5" />
+   <Bottombar />
+</template>
+
+<style scoped lang="scss">
+@import url('./assets/main.scss');
 </style>
