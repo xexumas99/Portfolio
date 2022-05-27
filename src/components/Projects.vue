@@ -21,9 +21,15 @@ export default defineComponent({
                   src: '/icons/node.png',
                   url: 'https://nodejs.org/',
                },
+               {
+                  alt: 'MySQL',
+                  src: '/icons/mysql.png',
+                  url: 'https://mysql.com/',
+               },
             ],
             repository: null,
             url: null,
+            doc: null,
          },
          {
             title: 'GoPlaces',
@@ -31,6 +37,7 @@ export default defineComponent({
             description: 'My TFG...',
             repository: null,
             url: null,
+            doc: null,
             stack: [
                {
                   alt: 'Flutter',
@@ -42,14 +49,20 @@ export default defineComponent({
                   src: '/icons/node.png',
                   url: 'https://nodejs.org/',
                },
+               {
+                  alt: 'MySQL',
+                  src: '/icons/mysql.png',
+                  url: 'https://mysql.com/',
+               },
             ],
          },
          {
             title: 'Colors',
             company: 'Myself',
             description: 'My TFG...',
-            repository: null,
+            repository: 'https://github.com/xexumas99/colores',
             url: null,
+            doc: null,
             stack: [
                {
                   alt: 'Laravel',
@@ -62,8 +75,9 @@ export default defineComponent({
             title: 'AcademiaOnline ',
             company: 'Myself',
             description: 'My TFG...',
-            repository: null,
+            repository: 'https://github.com/xexumas99/AcademiaOnline',
             url: null,
+            doc: null,
             stack: [
                {
                   alt: 'GraphQl',
@@ -83,7 +97,8 @@ export default defineComponent({
             company: 'Myself',
             description: 'My TFG...',
             repository: null,
-            url: null,
+            url: 'https://fran-chess-game.netlify.app/',
+            doc: null,
             stack: [
                {
                   alt: 'Angular',
@@ -98,6 +113,7 @@ export default defineComponent({
             description: 'My TFG...',
             repository: null,
             url: null,
+            doc: 'https://drive.google.com/file/d/1Tmg_ReL3FESgQXHian3PD3jmQMjYl8A0/view?usp=sharing',
             stack: [
                {
                   alt: 'Flutter',
@@ -169,7 +185,10 @@ export default defineComponent({
                         {{ project.description }}
                      </p>
                      <div class="row">
-                        <div v-if="project.repository != null" class="col">
+                        <div
+                           v-if="project.repository != null"
+                           class="col-md-4 col-xs-12"
+                        >
                            <a
                               :href="project.repository"
                               target="_blank"
@@ -178,13 +197,28 @@ export default defineComponent({
                               >Repository</a
                            >
                         </div>
-                        <div v-if="project.url != null" class="col">
+                        <div
+                           v-if="project.url != null"
+                           class="col-md-2 col-xs-12"
+                        >
                            <a
                               :href="project.url"
                               target="_blank"
                               class="card-link"
                               style="color: #ffcd9b"
                               >View</a
+                           >
+                        </div>
+                        <div
+                           v-if="project.doc != null"
+                           class="col-md-2 col-xs-12"
+                        >
+                           <a
+                              :href="project.doc"
+                              target="_blank"
+                              class="card-link"
+                              style="color: #ffcd9b"
+                              >Paper</a
                            >
                         </div>
                         <div class="col text-end">
@@ -194,6 +228,7 @@ export default defineComponent({
                            >
                               <a :href="s.url" target="_blank">
                                  <img
+                                    :title="s.alt"
                                     class="my-logo"
                                     :src="s.src"
                                     :alt="s.alt"

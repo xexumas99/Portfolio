@@ -10,7 +10,7 @@ export default {};
             <div class="col" style="padding-top: 2em">
                <section class="mb-4 text-start">
                   <a
-                     class="my-btn btn btn-outline-light btn-floating m-1"
+                     class="primary-btn btn btn-outline-light btn-floating m-1"
                      href="https://twitter.com/FranMasLledo99"
                      target="_blank"
                      role="button"
@@ -18,7 +18,7 @@ export default {};
                   ></a>
 
                   <a
-                     class="my-btn btn btn-outline-light btn-floating m-1"
+                     class="primary-btn btn btn-outline-light btn-floating m-1"
                      href="https://www.instagram.com/franmas99/"
                      role="button"
                      target="_blank"
@@ -26,7 +26,7 @@ export default {};
                   ></a>
 
                   <a
-                     class="my-btn btn btn-outline-light btn-floating m-1"
+                     class="primary-btn btn btn-outline-light btn-floating m-1"
                      href="https://www.linkedin.com/in/jos%C3%A9-francisco-mas-lled%C3%B3-8b852b1b1/"
                      role="button"
                      target="_blank"
@@ -34,7 +34,7 @@ export default {};
                   ></a>
 
                   <a
-                     class="my-btn btn btn-outline-light btn-floating m-1"
+                     class="primary-btn btn btn-outline-light btn-floating m-1"
                      href="https://github.com/xexumas99"
                      role="button"
                      target="_blank"
@@ -48,13 +48,13 @@ export default {};
                      You can contact me through my social networks, email or
                      mobile phone.
                   </p>
-                  <i class="my-color fa-solid fa-envelope" />&nbsp;
-                  <a class="my-color" href="mailto:franmaslledo@gmail.com">
+                  <i class="primary-color fa-solid fa-envelope" />&nbsp;
+                  <a class="primary-color" href="mailto:franmaslledo@gmail.com">
                      franmaslledo@gmail.com</a
                   >
                   <br />
-                  <i class="my-color fa-solid fa-phone" />&nbsp;
-                  <a class="my-color" href="tel:+34647643437">
+                  <i class="primary-color fa-solid fa-phone" />&nbsp;
+                  <a class="primary-color" href="tel:+34647643437">
                      +34 647 643 437</a
                   >
                </section>

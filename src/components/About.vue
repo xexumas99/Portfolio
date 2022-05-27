@@ -1,10 +1,14 @@
 <script lang="ts">
-import { defineComponent, ref } from 'vue';
+import { computed, defineComponent, ref } from 'vue';
 
 export default defineComponent({
    name: 'about',
    setup() {
       const selectedOpt = ref(1);
+
+      const isSmallScreen = computed(() => {
+         return window.innerWidth < 480;
+      });
 
       const stack = [
          {
@@ -49,7 +53,7 @@ export default defineComponent({
          },
          {
             alt: 'Quasar',
-            src: '/icons/quasar.svg',
+            src: '/icons/quasar.png',
             url: 'https://quasar.dev/',
          },
          {
@@ -95,7 +99,7 @@ export default defineComponent({
             position: 'Fullstack developer',
             location: 'Barcelona',
             description:
-               'I am currently developing the <a style="color: #ff5004" href="https://europelanguagejobs.com" target="_blank">europelanguagejobs.com</a> website with a team, while I continue working on my main project, the GoPlaces app.',
+               'I am currently developing the <a class="tertiary-color" href="https://europelanguagejobs.com" target="_blank">europelanguagejobs.com</a> website with a team, while I continue working on my main project, the GoPlaces app.',
             from: '2021',
             to: 'now',
             stack: [
@@ -111,7 +115,7 @@ export default defineComponent({
                },
                {
                   alt: 'Quasar',
-                  src: '/icons/quasar.svg',
+                  src: '/icons/quasar.png',
                   url: 'https://quasar.dev/',
                },
                {
@@ -145,7 +149,8 @@ export default defineComponent({
             company: 'Smartloto S.L.',
             position: 'Junior Fullstack developer',
             location: 'Alicante',
-            description: 'XXX',
+            description:
+               'During my stay at smartloto S.L. I developed together with a colleague the company backoffice and a Node project that makes use of the NEM blockchain to create apostilles.',
             from: '2020',
             to: '2020',
             stack: [
@@ -183,6 +188,7 @@ export default defineComponent({
          studies,
          experience,
          getImage,
+         isSmallScreen,
       };
    },
 });
@@ -194,7 +200,7 @@ export default defineComponent({
          <div class="row">
             <div class="col">
                <img
-                  style="max-height: 65vh; width: auto; border-radius: 20px"
+                  class="my-img"
                   src="http://imroz.ibthemespro.com/img/about-8.af980894.jpg"
                   alt="about_img"
                />
@@ -213,7 +219,7 @@ export default defineComponent({
                   <button
                      @click="selectedOpt = 1"
                      type="button"
-                     class="my-btn btn btn-outline-dark btn-lg"
+                     class="primary-btn btn btn-outline-dark btn-lg"
                      :class="selectedOpt == 1 ? 'active' : ''"
                   >
                      Stack
@@ -221,7 +227,7 @@ export default defineComponent({
                   <button
                      @click="selectedOpt = 2"
                      type="button"
-                     class="my-btn btn btn-outline-dark btn-lg"
+                     class="primary-btn btn btn-outline-dark btn-lg"
                      :class="selectedOpt == 2 ? 'active' : ''"
                   >
                      Studies
@@ -229,7 +235,7 @@ export default defineComponent({
                   <button
                      @click="selectedOpt = 3"
                      type="button"
-                     class="my-btn btn btn-outline-dark btn-lg"
+                     class="primary-btn btn btn-outline-dark btn-lg"
                      :class="selectedOpt == 3 ? 'active' : ''"
                   >
                      Experience
@@ -237,7 +243,7 @@ export default defineComponent({
                   <button
                      @click="selectedOpt = 4"
                      type="button"
-                     class="my-btn btn btn-outline-dark btn-lg"
+                     class="primary-btn btn btn-outline-dark btn-lg"
                      :class="selectedOpt == 4 ? 'active' : ''"
                   >
                      Interests
@@ -249,9 +255,9 @@ export default defineComponent({
                      <div
                         v-for="(s, index) in stack"
                         :key="index"
-                        class="col-md-3 col-xs-6"
+                        class="col-3"
                      >
-                        <a :href="s.url" target="_blank">
+                        <a :title="s.alt" :href="s.url" target="_blank">
                            <img class="my-logo" :src="s.src" :alt="s.alt" />
                         </a>
                      </div>
@@ -260,7 +266,8 @@ export default defineComponent({
                <div v-else-if="selectedOpt == 2">
                   <div class="mt-4">
                      <template v-for="(s, index) in studies" :key="index">
-                        <span class="text-bold my-color">{{ s.center }} </span
+                        <span class="text-bold tertiary-color"
+                           >{{ s.center }} </span
                         ><br />
                         <span class="secondary-color">{{ s.degree }} </span
                         ><br />
@@ -272,7 +279,7 @@ export default defineComponent({
                <div v-else-if="selectedOpt == 3">
                   <div class="mt-4">
                      <template v-for="(e, index) in experience" :key="index">
-                        <span class="text-bold my-color"
+                        <span class="text-bold tertiary-color"
                            >{{ e.company }} - {{ e.location }} </span
                         ><br />
                         <span class="secondary-color">{{ e.position }} </span
@@ -284,7 +291,11 @@ export default defineComponent({
                                  v-for="(s, index) in e.stack"
                                  :key="index"
                               >
-                                 <a :href="s.url" target="_blank">
+                                 <a
+                                    :title="s.alt"
+                                    :href="s.url"
+                                    target="_blank"
+                                 >
                                     <img
                                        class="my-logo-sm"
                                        :src="s.src"
@@ -303,7 +314,38 @@ export default defineComponent({
                   </div>
                </div>
                <div v-else-if="selectedOpt == 4">
-                  <p>Interests</p>
+                  <div class="mt-4">
+                     <div class="row">
+                        <div class="col">
+                           <p class="text-bold tertiary-color mb-1">
+                              Software Development
+                           </p>
+                           <li>Front-end Development</li>
+                           <li>Back-end Development</li>
+                           <li>Cross-platform Mobile Development</li>
+                           <p class="text-bold mt-4 tertiary-color mb-1">
+                              Systems & Cybersecurity
+                           </p>
+                           <li>System Installation and Administration</li>
+                           <li>Pentesting</li>
+                           <li>Bash & Batch Scripting</li>
+                        </div>
+                        <div class="col">
+                           <p class="text-bold tertiary-color mb-1">
+                              Project Development
+                           </p>
+                           <li>Teamwork & Communication</li>
+                           <li></li>
+                           <li></li>
+                           <p class="text-bold mt-4 tertiary-color mb-1">
+                              Other
+                           </p>
+                           <li>Video Game Programming & Game Design</li>
+                           <li>Blockchain & Smart Contracts</li>
+                           <li></li>
+                        </div>
+                     </div>
+                  </div>
                </div>
             </div>
          </div>
@@ -326,5 +368,18 @@ export default defineComponent({
 .my-logo-sm {
    max-height: 1.7em;
    width: auto;
+}
+
+.my-img {
+   max-height: 65vh;
+   width: auto;
+   border-radius: 20px;
+}
+
+@media only screen and (max-device-width: 480px) {
+   .my-img {
+      height: auto;
+      width: 100%;
+   }
 }
 </style>

@@ -35,13 +35,18 @@ export default defineComponent({
                   <a class="nav-link" href="#projects-section">Projects</a>
                </li>
             </ul>
-            <button
-               type="button"
-               class="my-btn btn btn-outline-dark"
-               style="border-radius: 20px"
+            <a
+               href="https://drive.google.com/file/d/1WfOEXNGdyHr3LP-Bkqb-xHzl-NFg2a2o/view?usp=sharing"
+               target="_blank"
             >
-               Download CV
-            </button>
+               <button
+                  type="button"
+                  class="primary-btn btn btn-outline-dark"
+                  style="border-radius: 20px"
+               >
+                  Download CV
+               </button>
+            </a>
          </div>
       </div>
    </nav>
