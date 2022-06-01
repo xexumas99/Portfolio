@@ -1,16 +1,22 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { computed, defineComponent } from 'vue';
 
 export default defineComponent({
    name: 'navbar',
    setup() {
-      return {};
+      const isSmallScreen = computed(() => {
+         return window.innerWidth < 480;
+      });
+      return { isSmallScreen };
    },
 });
 </script>
 
 <template>
-   <nav class="navbar sticky-top navbar-expand-lg bg-light">
+   <nav
+      v-if="!isSmallScreen"
+      class="navbar sticky-top navbar-expand-lg bg-light"
+   >
       <div class="container">
          <button
             class="navbar-toggler"
@@ -50,6 +56,26 @@ export default defineComponent({
          </div>
       </div>
    </nav>
+   <nav v-else class="sticky-top navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="px-3 d-flex" style="width: 100%">
+         <a style="flex-grow: 0" class="navbar-brand" href="#">Home</a>
+         <a style="flex-grow: 0" class="navbar-brand" href="#about-section"
+            >About</a
+         >
+         <a style="flex-grow: 0" class="navbar-brand" href="#projects-section"
+            >Projects</a
+         >
+         <div style="flex-grow: 1"></div>
+         <a
+            href="https://drive.google.com/file/d/1WfOEXNGdyHr3LP-Bkqb-xHzl-NFg2a2o/view?usp=sharing"
+            target="_blank"
+         >
+            <button type="button" class="primary-btn btn">
+               <i class="fa-solid fa-download"></i>
+            </button>
+         </a>
+      </div>
+   </nav>
 </template>
 
 <style lang="scss" scoped>
@@ -66,5 +92,3 @@ nav {
    }
 }
 </style>
-
-

@@ -1,17 +1,20 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { computed, defineComponent } from 'vue';
 
 export default defineComponent({
    name: 'header',
    setup() {
-      return {};
+      const isSmallScreen = computed(() => {
+         return window.innerWidth < 480;
+      });
+      return { isSmallScreen };
    },
 });
 </script>
 
 <template>
    <div id="header-section" class="section d-flex align-items-center">
-      <div class="container">
+      <div class="container" :class="isSmallScreen ? 'text-center mt-5' : ''">
          <h1 class="primary-color" style="font-size: 70px !important">
             Fran Mas Lledó
          </h1>
@@ -22,6 +25,7 @@ export default defineComponent({
             target="_blank"
          >
             <button
+               :style="isSmallScreen ? 'width: 80%' : ''"
                type="button"
                class="mt-3 btn btn-outline-dark btn-lg tertiary-btn"
             >
@@ -35,5 +39,9 @@ export default defineComponent({
 <style lang="scss" scoped>
 #header-section {
    min-height: 100vh;
+
+   @media screen and (max-device-width: 480px) {
+      min-height: auto;
+   }
 }
 </style>

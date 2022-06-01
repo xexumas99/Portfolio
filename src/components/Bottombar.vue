@@ -1,14 +1,27 @@
-
 <script lang="ts">
-export default {};
+import { computed } from '@vue/runtime-core';
+export default {
+   setup() {
+      const isSmallScreen = computed(() => {
+         return window.innerWidth < 480;
+      });
+      return { isSmallScreen };
+   },
+};
 </script>
 
 <template>
    <footer class="bg-dark text-center text-white">
       <div class="container py-4">
          <div class="row">
-            <div class="col" style="padding-top: 2em">
-               <section class="mb-4 text-start">
+            <div
+               class="col-md-6 col-xs-12"
+               :style="isSmallScreen ? 'padding-top: 1em' : 'padding-top: 2em'"
+            >
+               <section
+                  :class="isSmallScreen ? 'text-center' : 'text-start'"
+                  class="mb-4"
+               >
                   <a
                      class="primary-btn btn btn-outline-light btn-floating m-1"
                      href="https://twitter.com/FranMasLledo99"
@@ -42,7 +55,10 @@ export default {};
                   ></a>
                </section>
             </div>
-            <div class="col text-end">
+            <div
+               :class="isSmallScreen ? 'text-center' : 'text-end'"
+               class="col-md-6 col-xs-12"
+            >
                <section class="mb-4" style="font-size: 18px">
                   <p>
                      You can contact me through my social networks, email or
@@ -63,7 +79,6 @@ export default {};
       </div>
    </footer>
 </template>
-
 
 <style lang="scss" scoped>
 footer {

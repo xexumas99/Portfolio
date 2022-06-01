@@ -198,20 +198,24 @@ export default defineComponent({
    <div id="about-section" class="section d-flex align-items-center">
       <div class="container" style="padding-top: 5em">
          <div class="row">
-            <div class="col">
+            <div class="col-md-6 col-xs-12">
                <img
                   class="my-img"
                   src="http://imroz.ibthemespro.com/img/about-8.af980894.jpg"
                   alt="about_img"
                />
             </div>
-            <div class="col">
-               <h1>About Me</h1>
+            <div
+               :class="isSmallScreen ? 'px-4' : ''"
+               class="col-md-6 col-xs-12"
+            >
+               <h1 :class="isSmallScreen ? 'mt-4' : ''">About Me</h1>
                <p style="font-size: 20px">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Impedit exercitationem beatae
                </p>
                <div
+                  v-if="!isSmallScreen"
                   class="btn-group btn-group-lg"
                   role="group"
                   aria-label="Basic example"
@@ -250,8 +254,15 @@ export default defineComponent({
                   </button>
                </div>
 
-               <div v-if="selectedOpt == 1">
-                  <div class="mt-3 row gy-5">
+               <div
+                  :class="isSmallScreen ? 'pt-3' : ''"
+                  v-if="selectedOpt == 1 || isSmallScreen"
+               >
+                  <h1 v-if="isSmallScreen">Stack</h1>
+                  <div
+                     :class="isSmallScreen ? 'pt-3' : 'mt-3'"
+                     class="row gy-5"
+                  >
                      <div
                         v-for="(s, index) in stack"
                         :key="index"
@@ -263,7 +274,12 @@ export default defineComponent({
                      </div>
                   </div>
                </div>
-               <div v-else-if="selectedOpt == 2">
+               <div
+                  :class="isSmallScreen ? 'mt-5' : ''"
+                  class="my-tab"
+                  v-if="selectedOpt == 2 || isSmallScreen"
+               >
+                  <h1 v-if="isSmallScreen">Studies</h1>
                   <div class="mt-4">
                      <template v-for="(s, index) in studies" :key="index">
                         <span class="text-bold tertiary-color"
@@ -276,7 +292,8 @@ export default defineComponent({
                      </template>
                   </div>
                </div>
-               <div v-else-if="selectedOpt == 3">
+               <div class="my-tab" v-if="selectedOpt == 3 || isSmallScreen">
+                  <h1 class="mt-4" v-if="isSmallScreen">Experience</h1>
                   <div class="mt-4">
                      <template v-for="(e, index) in experience" :key="index">
                         <span class="text-bold tertiary-color"
@@ -286,7 +303,7 @@ export default defineComponent({
                         ><br />
                         <p v-html="e.description" />
                         <div class="row">
-                           <div class="col-10">
+                           <div class="col-md-8 col-xs-12">
                               <template
                                  v-for="(s, index) in e.stack"
                                  :key="index"
@@ -313,7 +330,8 @@ export default defineComponent({
                      </template>
                   </div>
                </div>
-               <div v-else-if="selectedOpt == 4">
+               <div class="my-tab" v-if="selectedOpt == 4 || isSmallScreen">
+                  <h1 v-if="isSmallScreen">Interests</h1>
                   <div class="mt-4">
                      <div class="row">
                         <div class="col">
@@ -354,6 +372,10 @@ export default defineComponent({
 </template>
 
 <style lang="scss" scoped>
+.my-tab {
+   font-size: 20px !important;
+}
+
 .active {
    border: 1px solid #ff5004;
    background: #ff5004;
@@ -380,6 +402,11 @@ export default defineComponent({
    .my-img {
       height: auto;
       width: 100%;
+   }
+
+   .my-logo {
+      max-height: 4em;
+      width: auto;
    }
 }
 </style>
