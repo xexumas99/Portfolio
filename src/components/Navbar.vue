@@ -42,7 +42,7 @@ export default defineComponent({
             >
                <button
                   type="button"
-                  class="primary-btn btn btn-outline-dark"
+                  class="tertiary-btn btn btn-outline-dark"
                   style="border-radius: 20px"
                >
                   Download CV
@@ -65,7 +65,7 @@ export default defineComponent({
             href="https://drive.google.com/file/d/1WfOEXNGdyHr3LP-Bkqb-xHzl-NFg2a2o/view?usp=sharing"
             target="_blank"
          >
-            <button type="button" class="primary-btn btn">
+            <button type="button" class="tertiary-btn btn">
                <i class="fa-solid fa-download"></i>
             </button>
          </a>
@@ -83,7 +83,7 @@ nav {
    }
 
    .nav-link:hover {
-      color: #ff5004 !important;
+      color: #fa7840 !important;
    }
 }
 </style>

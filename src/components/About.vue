@@ -208,8 +208,9 @@ export default defineComponent({
             >
                <h1 :class="isSmallScreen ? 'mt-4' : ''">About Me</h1>
                <p style="font-size: 20px">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Impedit exercitationem beatae
+                  Hi I'm Fran! I've been working as a developer since 2020. I
+                  love what I do and I'm never tired of learning, knowing new
+                  people and taking challenges.
                </p>
                <div
                   v-if="!isSmallScreen"
@@ -220,7 +221,7 @@ export default defineComponent({
                   <button
                      @click="selectedOpt = 1"
                      type="button"
-                     class="primary-btn btn btn-outline-dark btn-lg"
+                     class="tertiary-btn btn btn-outline-dark btn-lg"
                      :class="selectedOpt == 1 ? 'active' : ''"
                   >
                      Stack
@@ -228,7 +229,7 @@ export default defineComponent({
                   <button
                      @click="selectedOpt = 2"
                      type="button"
-                     class="primary-btn btn btn-outline-dark btn-lg"
+                     class="tertiary-btn btn btn-outline-dark btn-lg"
                      :class="selectedOpt == 2 ? 'active' : ''"
                   >
                      Studies
@@ -236,7 +237,7 @@ export default defineComponent({
                   <button
                      @click="selectedOpt = 3"
                      type="button"
-                     class="primary-btn btn btn-outline-dark btn-lg"
+                     class="tertiary-btn btn btn-outline-dark btn-lg"
                      :class="selectedOpt == 3 ? 'active' : ''"
                   >
                      Experience
@@ -244,7 +245,7 @@ export default defineComponent({
                   <button
                      @click="selectedOpt = 4"
                      type="button"
-                     class="primary-btn btn btn-outline-dark btn-lg"
+                     class="tertiary-btn btn btn-outline-dark btn-lg"
                      :class="selectedOpt == 4 ? 'active' : ''"
                   >
                      Interests
@@ -341,7 +342,7 @@ export default defineComponent({
                            <p class="text-bold mt-4 tertiary-color mb-1">
                               Systems & Cybersecurity
                            </p>
-                           <li>System Installation and Administration</li>
+                           <li>Systems Installation & Administration</li>
                            <li>Pentesting</li>
                            <li>Bash & Batch Scripting</li>
                         </div>
@@ -350,14 +351,14 @@ export default defineComponent({
                               Project Development
                            </p>
                            <li>Teamwork & Communication</li>
-                           <li></li>
-                           <li></li>
+                           <li>DevOps</li>
+                           <li>Testing designing & development</li>
                            <p class="text-bold mt-4 tertiary-color mb-1">
                               Other
                            </p>
                            <li>Video Game Programming & Game Design</li>
                            <li>Blockchain & Smart Contracts</li>
-                           <li></li>
+                           <li>Video edition</li>
                         </div>
                      </div>
                   </div>
@@ -374,8 +375,8 @@ export default defineComponent({
 }
 
 .active {
-   border: 1px solid #ff5004;
-   background: #ff5004;
+   border: 1px solid #fa7840;
+   background: #fa7840;
    color: #0b1120;
 }
 
