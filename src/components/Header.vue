@@ -1,14 +1,9 @@
 <script lang="ts">
-import { computed, defineComponent } from 'vue';
+import { defineComponent } from 'vue';
 
 export default defineComponent({
+   props: ['isSmallScreen'],
    name: 'header',
-   setup() {
-      const isSmallScreen = computed(() => {
-         return window.innerWidth < 480;
-      });
-      return { isSmallScreen };
-   },
 });
 </script>
 

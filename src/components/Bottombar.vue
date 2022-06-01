@@ -1,12 +1,6 @@
 <script lang="ts">
-import { computed } from '@vue/runtime-core';
 export default {
-   setup() {
-      const isSmallScreen = computed(() => {
-         return window.innerWidth < 480;
-      });
-      return { isSmallScreen };
-   },
+   props: ['isSmallScreen'],
 };
 </script>
 

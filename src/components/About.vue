@@ -1,14 +1,12 @@
 <script lang="ts">
-import { computed, defineComponent, ref } from 'vue';
+import { defineComponent, ref } from 'vue';
 
 export default defineComponent({
    name: 'about',
+   props: ['isSmallScreen'],
+
    setup() {
       const selectedOpt = ref(1);
-
-      const isSmallScreen = computed(() => {
-         return window.innerWidth < 480;
-      });
 
       const stack = [
          {
@@ -188,7 +186,6 @@ export default defineComponent({
          studies,
          experience,
          getImage,
-         isSmallScreen,
       };
    },
 });

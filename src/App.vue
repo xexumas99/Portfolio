@@ -1,5 +1,5 @@
 <script lang="ts">
-import { defineComponent } from 'vue';
+import { computed, defineComponent } from 'vue';
 import About from './components/About.vue';
 import Bottombar from './components/Bottombar.vue';
 import Header from './components/Header.vue';
@@ -10,20 +10,23 @@ export default defineComponent({
    components: { Header, About, Projects, Navbar, Bottombar },
    name: 'App',
    setup() {
-      return {};
+      const isSmallScreen = computed(() => {
+         return window.innerWidth < 480;
+      });
+      return { isSmallScreen };
    },
 });
 </script>
 
 <template>
-   <Navbar />
+   <Navbar :isSmallScreen="isSmallScreen" />
 
-   <Header />
+   <Header :isSmallScreen="isSmallScreen" />
 
-   <About />
+   <About :isSmallScreen="isSmallScreen" />
 
-   <Projects class="pb-5" />
-   <Bottombar />
+   <Projects :isSmallScreen="isSmallScreen" class="pb-5" />
+   <Bottombar :isSmallScreen="isSmallScreen" />
 </template>
 
 <style scoped lang="scss">
