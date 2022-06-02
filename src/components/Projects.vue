@@ -9,7 +9,7 @@ export default defineComponent({
             title: 'Undecimo Backoffice',
             company: 'Smartloto S.L.',
             description:
-               'Development of an administration page to control the apostilled lottery tickets on the NEM blockchain.',
+               'Development of an administration page to control the apostilled lottery tickets on the NEM blockchain, made in laravel framework.',
             stack: [
                {
                   alt: 'Laravel',
@@ -34,7 +34,8 @@ export default defineComponent({
          {
             title: 'GoPlaces',
             company: 'Europe Language Jobs',
-            description: 'My TFG...',
+            description:
+               'A light but powerful mobile application to find the best places to work in Europe. Developed in Flutter for Android and IOS.',
             repository: null,
             url: null,
             doc: null,
@@ -59,7 +60,8 @@ export default defineComponent({
          {
             title: 'Colors',
             company: 'Myself',
-            description: 'My TFG...',
+            description:
+               'A small project made in Laravel and Vue that gets the most dominant color of an image, it also tries to guess its name.',
             repository: 'https://github.com/xexumas99/colores',
             url: null,
             doc: null,
@@ -74,7 +76,8 @@ export default defineComponent({
          {
             title: 'AcademiaOnline ',
             company: 'Myself',
-            description: 'My TFG...',
+            description:
+               'An initiation project for a GraphQL API made in JS. It emulates an academyand you can use it by http requests or an UI.',
             repository: 'https://github.com/xexumas99/AcademiaOnline',
             url: null,
             doc: null,
@@ -95,7 +98,8 @@ export default defineComponent({
          {
             title: 'Fran Chess Game ',
             company: 'Myself',
-            description: 'My TFG...',
+            description:
+               "A simple chess game made in JS. It also lets you save/load your games and check the opening. It's playable but some rules are missing.",
             repository: null,
             url: 'https://fran-chess-game.netlify.app/',
             doc: null,
@@ -110,7 +114,8 @@ export default defineComponent({
          {
             title: 'Teacher At Home',
             company: 'Myself',
-            description: 'My TFG...',
+            description:
+               "My final degree project in college, it's a whole environment, with a mobile app, backoffice page, public API and a website.",
             repository: null,
             url: null,
             doc: 'https://drive.google.com/file/d/1Tmg_ReL3FESgQXHian3PD3jmQMjYl8A0/view?usp=sharing',
